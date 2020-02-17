@@ -1,0 +1,75 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head></h:head> 
+<body> 
+<h:form>
+
+<table>
+
+	<tr>
+
+		<td>
+		
+			
+			<fieldset >
+			<legend> Medecin </legend>
+			
+			<h:panelGrid id="medec_grid" columns="4">
+				
+				<h:outputLabel value="Matricule"></h:outputLabel>
+				<h:inputText id="matric" value="#{consultationController.matricule}"></h:inputText>
+				
+				<p:commandButton value="RECHERCHER" action="#{consultationController.rechercherMedecin}"  update="medec_grid"></p:commandButton>
+				
+				<h:commandButton value="ANNULER" action="#{consultationController.annulerMedecin}"  update= "medec_grid"></h:commandButton>
+				
+				<h:outputLabel value="Nom"></h:outputLabel>
+				<h:inputText value="#{consultationController.medecin.nom}"></h:inputText>
+				
+				<h:outputLabel value="Prenoms"></h:outputLabel>
+				<h:inputText value="#{consultationController.medecin.prenom}"></h:inputText>
+				
+				
+    </p:column>
+				
+			</h:panelGrid>
+			</fieldset>
+		</td>
+		
+		<td> 
+			<fieldset>
+		 	<legend> Medecin </legend>
+		 	
+		 	<h:panelGrid id="pati_grid" columns="4">
+		 	
+		 	<h:outputLabel value="Numéro de sécurité"></h:outputLabel>
+		 	<h:inputText value="#{consultationController.numsecurite}"></h:inputText>
+		 	
+		 	<h:commandButton value="RECHERCHE" action="#{consultationController.rechercherPatient}"  update="pati_grid" ></h:commandButton>
+		 	
+		 	<h:commandButton value="ANNULER" action = "#{consultationController.annulerPatient}"  update= "pati_grid"></h:commandButton>
+		 	
+		 	<h:outputLabel value="Nom"></h:outputLabel>
+		 	<h:inputText value="#{consultationController.patient.nompatient}" ></h:inputText>
+		 	
+		 	<h:outputLabel value="Prenoms"></h:outputLabel>
+		 	<h:inputText value="#{consultationController.patient.prenompatient}"></h:inputText>
+		 	
+		 	</h:panelGrid>
+		 	
+		 </fieldset>
+		 
+		</td>
+		
+	</tr>
+
+</table>	
+
+</h:form>
+</body> 
+</html>
